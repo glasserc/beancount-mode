@@ -262,8 +262,7 @@ from the open directive for the relevant account."
     ;; Number followed by currency not covered by previous rules.
     (,(concat beancount-number-regexp "\\s-+" beancount-currency-regexp) . 'beancount-amount)
     ;; Accounts not covered by previous rules.
-    (,beancount-account-regexp . 'beancount-account)
-    ))
+    (,beancount-account-regexp . 'beancount-account)))
 
 (defun beancount-tab-dwim (&optional arg)
   (interactive "P")
@@ -623,8 +622,7 @@ Uses ido niceness according to `beancount-use-ido'."
        (while (and (not (eobp)) (< (point) end-marker))
          (beginning-of-line)
          (progn ,@exprs)
-         (forward-line 1)
-         ))))
+         (forward-line 1)))))
 
 (defun beancount-align-numbers (begin end &optional requested-currency-column)
   "Align all numbers in the given region. CURRENCY-COLUMN is the character
@@ -652,8 +650,7 @@ align with the fill-column."
                                    beancount-currency-regexp)
                            line)
          (push (length (match-string 1 line)) prefix-widths)
-         (push (length (match-string 2 line)) number-widths)
-         )))
+         (push (length (match-string 2 line)) number-widths))))
 
     (when prefix-widths
       ;; Loop again to make the adjustments to the numbers.
@@ -666,8 +663,7 @@ align with the fill-column."
                   (max (- requested-currency-column (length number-padding) number-width 1)
                        max-prefix-width)
                 max-prefix-width))
-             (prefix-format (format "%%-%ss" max-prefix-width))
-             )
+             (prefix-format (format "%%-%ss" max-prefix-width)))
 
         (beancount-for-line-in-region
          begin end
@@ -746,8 +742,7 @@ what that column is and returns it (an integer)."
           (forward-line -1))
         (when (or (looking-at posting-regexp)
                   (looking-at balance-regexp))
-          (setq column (- (match-beginning 1) (point))))
-        ))
+          (setq column (- (match-beginning 1) (point))))))
     column))
 
 (defun beancount--account-currency (account)
