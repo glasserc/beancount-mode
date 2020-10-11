@@ -749,6 +749,7 @@ what that column is and returns it (an integer)."
     column))
 
 (defun beancount--account-currency (account)
+  "Try to guess the currency for ACCOUNT based on its \"open\" directive."
   ;; Build a regexp that matches an open directive that specifies a
   ;; single account currency. The currency is match group 1.
   (let ((re (concat "^" beancount-date-regexp " +open"
