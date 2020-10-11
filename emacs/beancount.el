@@ -317,11 +317,11 @@ from the open directive for the relevant account."
 
   (setq-local tab-always-indent 'complete)
   (setq-local completion-ignore-case t)
-  
+
   (add-hook 'completion-at-point-functions #'beancount-completion-at-point nil t)
   (add-hook 'post-command-hook #'beancount-highlight-transaction-at-point nil t)
   (add-hook 'post-self-insert-hook #'beancount--electric-currency nil t)
-  
+
   (setq-local font-lock-defaults '(beancount-font-lock-keywords))
   (setq-local font-lock-syntax-table t)
 
@@ -788,7 +788,7 @@ Only useful if you have not installed Beancount properly in your PATH.")
 
 (defvar beancount-check-program "bean-check"
   "Program to run to run just the parser and validator on an
-  input file.")
+input file.")
 
 (defvar compilation-read-command)
 
@@ -818,7 +818,7 @@ Only useful if you have not installed Beancount properly in your PATH.")
 
 (defvar beancount-query-program "bean-query"
   "Program to run to run just the parser and validator on an
-  input file.")
+input file.")
 
 (defun beancount-query ()
   "Run bean-query."
