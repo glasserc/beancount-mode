@@ -43,7 +43,7 @@
   :type 'integer)
 
 (defcustom beancount-number-alignment-column 52
-  "Column to which align numbers in postinng definitions. Set to
+  "Column to which align numbers in posting definitions. Set to
 0 to automatically determine the minimum column that will allow
 to align all amounts."
   :type 'integer)
@@ -271,7 +271,7 @@ from the open directive for the relevant account."
     (indent-for-tab-command)))
 
 (defvar beancount-mode-map-prefix [(control c)]
-  "The prefix key used to bind Beancount commands in Emacs")
+  "The prefix key used to bind Beancount commands in Emacs.")
 
 (defvar beancount-mode-map
   (let ((map (make-sparse-keymap))
@@ -750,7 +750,7 @@ what that column is and returns it (an integer)."
 
 (defun beancount--account-currency (account)
   ;; Build a regexp that matches an open directive that specifies a
-  ;; single account currencydaaee. The currency is match group 1.
+  ;; single account currency. The currency is match group 1.
   (let ((re (concat "^" beancount-date-regexp " +open"
                     "\\s-+" (regexp-quote account)
                     "\\s-+\\(" beancount-currency-regexp "\\)\\s-+")))
@@ -1006,7 +1006,7 @@ With a numeric prefix ARG, show all headlines up to that level."
     (message msg)))
 
 (defun beancount-next-line ()
-  "Forward line, but mover over invisible line ends.
+  "Forward line, but move over invisible line ends.
 Essentially a much simplified version of `next-line'."
   (interactive)
   (beginning-of-line 2)
