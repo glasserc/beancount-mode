@@ -8,6 +8,7 @@
 ;; Author: Martin Blais <blais@furius.ca>
 ;; Author: Stefan Monnier <monnier@iro.umontreal.ca>
 ;; Author: Daniele Nicolodi <daniele@grinta.net>
+;; Homepage: https://github.com/beancount/beancount-mode
 
 ;; This file is not part of GNU Emacs.
 
